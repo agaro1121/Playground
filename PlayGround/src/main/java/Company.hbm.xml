@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+
+	<class name="hibernate.Company" table="COMPANY">
+
+		<id name="COMPANY_ID" column="COMPANY_ID" >
+			<generator class="assigned" />
+		</id>
+		
+		
+		<property name="NAME" column="NAME" />
+		<property name="PLACE_ID" column="PLACE_ID" />
+		<property name="STOCK_ID" column="STOCK_ID" />
+	</class>
+</hibernate-mapping>
