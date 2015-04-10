@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+		<comment>Number Words</comment>
+
+		<entry key="1">one</entry>
+		<entry key="2">two</entry>
+		<entry key="3">three</entry>
+		<entry key="4">four</entry>
+		<entry key="5">five</entry>
+		<entry key="6">six</entry>
+		<entry key="7">seven</entry>
+		<entry key="8">eight</entry>
+		<entry key="9">nine</entry>
+		
+		<entry key="10">ten</entry>
+		<entry key="11">eleven</entry>
+		<entry key="12">twelve</entry>
+		<entry key="13">thirteen</entry>
+		<entry key="14">fourteen</entry>
+		<entry key="15">fifteen</entry>
+		<entry key="16">sixteen</entry>
+		<entry key="17">seventeen</entry>
+		<entry key="18">eighteen</entry>
+		<entry key="19">nineteen</entry>
+		
+		<entry key="20">twenty</entry>
+		<entry key="30">thirty</entry>
+		<entry key="40">forty</entry>
+		<entry key="50">fifty</entry>
+		<entry key="60">sixty</entry>
+		<entry key="70">seventy</entry>
+		<entry key="80">eighty</entry>
+		<entry key="90">ninety</entry>
+
+</properties>

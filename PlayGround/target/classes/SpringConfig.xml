@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+        http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        ">
+	<context:annotation-config />
+
+	<!-- HIBERNATE TESTING -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="companyDataSource" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.connection.driver_class">oracle.jdbc.pool.OracleConnectionPoolDataSource</prop>
+			</props>
+		</property>
+
+		<property name="mappingResources">
+			<list>
+				<value>Company.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="companyDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="oracle.jdbc.pool.OracleConnectionPoolDataSource" />
+		<property name="url" value="jdbc:oracle:thin:@86.54.76.84:1521/xe" />
+		<property name="username" value="anthonygaro" />
+		<property name="password" value="oracle" />
+	</bean>
+
+
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="companyDAO2" class="hibernate.CompanyDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+	<!-- AOP XML TESTING -->
+	<bean id="wrestler" class="aopTestOne.Wrestler" />
+	<bean id="crowd" class="aopTestOne.Crowd" />
+	<aop:config>
+		<aop:aspect ref="crowd">
+
+			<aop:pointcut id="eyes"
+				expression="execution(* aopTestOne.Wrestler.pokeEyes(..))" />
+			<aop:before pointcut-ref="eyes" method="aah" />
+			<aop:after pointcut-ref="eyes" method="boo" />
+
+			<aop:pointcut expression="execution(* aopTestOne.Wrestler.flipTable(..))"
+				id="table" />
+			<aop:after method="yea" pointcut-ref="table" />
+
+			<!-- AROUND -->
+			<aop:pointcut expression="execution(* aopTestOne.Wrestler.dropKick(..))"
+				id="dk" />
+			<aop:around method="fullReaction" pointcut-ref="dk" />
+
+			<!-- PASSING PARAMTERS -->
+			<aop:pointcut
+				expression="execution(* aopTestOne.Wrestler.saySomething(String)) and args(cheer)"
+				id="cheering" />
+			<aop:before method="repeat" pointcut-ref="cheering" />
+
+
+		</aop:aspect>
+	</aop:config>
+
+
+	<!-- AUTODISCOVERY TEST -->
+	<context:component-scan base-package="autoDiscovery">
+		<!-- <context:exclude-filter type="assignable" expression="autoDiscovery.Ball"/> -->
+	</context:component-scan>
+	<!-- <bean id="guy" class="autoDiscovery.TeenBoy"/> -->
+
+
+	<!-- AUTOWIRE ANNOTATOINS TEST -->
+	<bean id="couch" class="autowireAno.Couch">
+		<property name="size" value="BIG" />
+	</bean>
+	<bean id="diningSet" class="autowireAno.DiningSet">
+		<property name="chairs" value="6" />
+		<property name="size" value="BIG" />
+	</bean>
+	<bean id="person" class="autowireAno.Person" />
+
+	<!-- COLLECTION TEST -->
+	<bean id="collectionTest" class="springCollections.CollectionTest">
+		<property name="names">
+			<list>
+				<value>Anthony</value>
+				<value>Raymond</value>
+			</list>
+		</property>
+
+		<property name="hoods">
+			<map>
+				<entry key="fordham" value="good" />
+				<entry key="Hunts Point" value="bad" />
+			</map>
+		</property>
+
+		<property name="stores">
+			<set>
+				<value>T-Mobile</value>
+				<value>ATT</value>
+				<value>Sprint</value>
+			</set>
+		</property>
+	</bean>
+
+
+	<!-- BEAN SCOPE TESTTING -->
+	<bean id="testBean" class="beanScope.Test" />
+	<bean id="testBean2" class="beanScope.Test2" scope="prototype" />
+
+
+	<!-- AUTOWIRE TESTING NO ANNOTATIONS -->
+	<bean id="car" class="autowire.Car" autowire="byName" />
+	<bean id="c" class="autowire.Color">
+		<property name="col" value="yellow" />
+	</bean>
+	<bean id="s" class="autowire.Sedan">
+		<property name="doors" value="4" />
+	</bean>
+
+	<!-- SPRING JDBC TEMPLATE TEST -->
+	<bean id="dataSource" class="oracle.jdbc.pool.OracleConnectionPoolDataSource">
+		<property name="URL" value="jdbc:oracle:thin:@86.54.76.84:1521/xe" />
+		<property name="user" value="anthonygaro" />
+		<property name="password" value="oracle" />
+	</bean>
+
+	<bean id="companyDAO" class="springJDBC.CompanyDAO">
+		<property name="Jt" ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>
