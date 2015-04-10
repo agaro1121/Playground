@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1415148987629_1" label="zxing-parent" name="zxing-parent">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/zxing-parent" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/android" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/android-core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/javase" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/android-integration" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/zxing.appspot.com" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/glass" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/androidtest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/zxingorg" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1414023691941_0" label="Window Working Set" name="Aggregate for window 1414023691940"/>
+</workingSetManager>

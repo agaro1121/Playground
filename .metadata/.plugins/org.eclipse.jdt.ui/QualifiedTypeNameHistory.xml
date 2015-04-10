@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.support.v7.widget.RecyclerView"/>
+<fullyQualifiedTypeName name="android.support.v7.widget.CardView"/>
+<fullyQualifiedTypeName name="org.hierro.materiallists.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="org.scarrediron.qrcodes.R.id"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.PreferencesActivity"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.camera.CameraConfigurationUtils"/>
+<fullyQualifiedTypeName name="org.scarrediron.qrcodes.R"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.book.SearchBookContentsActivity"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.result.ParsedResult"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.result.EmailAddressParsedResult"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.result.EmailAddressResultHandler"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.camera.CameraManager"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="org.scarrediron.qrcodes.MainActivity"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.CaptureActivity"/>
+<fullyQualifiedTypeName name="com.google.zxing.client.android.FinishListener"/>
+</qualifiedTypeNameHistroy>
